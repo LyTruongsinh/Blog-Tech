@@ -1,8 +1,214 @@
 .intro {
-    background-image: url('../../file-svg/circel.svg');
-    width: 500px;
-    height: 500px;
-    background-repeat: no-repeat;
-    background-size: contain; /* Điều chỉnh kích thước */
-    background-position: center;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  height: auto;
+  width: 995x;
+  margin: 0 auto;
+  color: gray;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+.intro h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.typing {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid white;
+  animation:
+    typing 3s steps(27) forwards,
+    blink 0.7s infinite;
+  font-size: 2rem;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+.content-child {
+  text-align: center;
+  margin-top: 50px;
+  border-radius: 10px;
+  height: auto;
+  border: 1px solid #f2726a;
+  padding: 20px;
+  display: flex;
+}
+.svg {
+  margin-top: 20px;
+  width: 50%;
+  height: auto; /* Tự động điều chỉnh chiều cao */
+  padding: 20px;
+}
+
+
+.content1 {
+  background: #ffffff; /* White background */
+  padding: 40px 30px; /* More padding for breathing space */
+  border-radius: 12px; /* Rounded corners */
+  max-width: 900px; /* Limiting width */
+  margin: 50px 0; /* Vertical margin without centering */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for elegance */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+  color: #333; /* Dark gray text */
+  line-height: 1.6; /* Increased line height for readability */
+  text-align: left; /* Align text to the left */
+}
+
+.content1 p {
+  font-size: 1.1rem; /* Comfortable font size */
+  color: #555; /* Light gray for text */
+}
+
+.content1 p .highlight {
+  font-weight: bold;
+  color: #f2726a; /* Accent color for highlights */
+}
+
+.content1 ul {
+  margin-top: 20px;
+  padding-left: 30px;
+}
+
+.content1 ul li {
+  font-size: 1.1rem; /* List items with slightly larger font */
+  margin-bottom: 15px; /* Space between list items */
+  color: #444; /* Slightly darker text for readability */
+}
+
+.content1 ul li strong {
+  color: #00f2ff; /* Bright accent color for section titles */
+}
+
+.content1 p:last-child {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #00f2ff; /* Bright color for the final sentence */
+}
+
+.content1 a {
+  color: #f2726a; /* Link color */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.content1 a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .content1 {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .content1 p,
+  .content1 ul li {
+    font-size: 1rem; /* Adjust font size for mobile */
+  }
+}
+
+.menu-choice {
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid #f2726a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height : auto;
+}
+
+.menu-choice-content {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 3 cột mỗi hàng */
+    grid-template-rows: repeat(2, auto); /* 2 hàng */
+    gap: 30px; /* Khoảng cách giữa các ô */
+    justify-content: center;
+    align-items: center;
+}
+.menu-choice-content-child {
+    height: 240px;
+    width: 240px;
+    background-color: white;
+    border-radius: 20px 20px 20px 0;
+    border : 2px solid #f2726a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.menu-choice-content-child:hover {
+  transform: translateY(-5px); /* Dịch chuyển lên 5px */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
+}
+.menu-choice-head {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+}
+.name-choice {
+  color : black;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 10px;
+  text-decoration: none;
+}
+.demo-choice {
+  color:darkgrey;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+.icon-choice {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.fluter {
+  background-image: url('../../file-svg/Flutter.svg');
+  width: 35px;
+  height: 35px;
+}
+.nodejs {
+  background-image: url('../../file-svg/Node.js.svg');
+  width: 35px;
+  height: 35px;
+}
+.reactjs {
+  background-image: url('../../file-svg/React.svg');
+  width: 35px;
+  height: 35px;
 }
