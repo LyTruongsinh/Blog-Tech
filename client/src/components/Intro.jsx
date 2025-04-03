@@ -2,10 +2,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import { Fragment } from "react";
 import { useEffect } from "react";
+import React from "react";
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
+import { FaFacebook, FaTwitter, FaInstagram, FaGoogle, FaWhatsapp } from "react-icons/fa";
+
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import CSS của AOS
-
 function Intro() {
+  const particlesInit = async (main) => {
+    console.log(main);
+    await loadFull(main);
+  };
+
+  const particlesLoaded = (container) => {
+    console.log(container);
+  };
   useEffect(() => {
     // Khởi tạo AOS
     AOS.init({
@@ -14,12 +26,31 @@ function Intro() {
       once: true, // Chỉ chạy hiệu ứng một lần khi phần tử xuất hiện
     });
   }, []);
+
   return (
     <Fragment>
-      <div class="intro">
-        <h1 class="typing">WELCOME TO TECHNOLOGY WORLD !</h1>
+      <div className="intro">
+        <h1 className="typing">WELCOME TO TECHNOLOGY WORLD !</h1>
+        <div className="icon_gdcs"></div>
+        <strong>
+          Explore the world of technology with the latest innovations!
+        </strong>
+        <div style={{ width: "600px", margin: "0 auto" }}>
+          <p className="fade-in-effect">
+            In a world driven by innovation, technology shapes the way we live,
+            work, and connect. From groundbreaking advancements in artificial
+            intelligence to the ever-evolving digital landscape, the
+            possibilities are limitless. As we embrace the future, we open doors
+            to new opportunities, creative solutions, and a smarter tomorrow.
+            Welcome to the world of technology—where ideas turn into reality,
+            and the future is built today!
+          </p>
+        </div>
+        <a className="glowButton" href="/home">
+          Get Started
+        </a>
       </div>
-      <div class="content-child" data-aos="fade-up">
+      <div className="content-child" data-aos="fade-up">
         <div className="svg">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
             <defs>
@@ -95,45 +126,46 @@ function Intro() {
         </div>
       </div>
 
-      <div class="content-child" data-aos="fade-up">
+      <div className="content-child" data-aos="fade-up">
         <div className="content1">
           <p>
-            <span className="highlight">Welcome to [Your Website Name]</span> –
-            Explore the Future of Technology!
+            <span className="highlight">
+              Discover the Future with [Your Website Name]!
+            </span>{" "}
+            – Explore the Future of Technology!
           </p>
           <p>
-            At <span className="highlight">[Your Website Name]</span>, we bring
-            you the latest news, reviews, and trends in the world of technology.
-            From artificial intelligence and blockchain to hardware,
-            programming, and cybersecurity, we keep you updated with the most
-            exciting innovations. 🚀
+            Technology is evolving faster than ever, and at{" "}
+            <span className="highlight">[Your Website Name]</span>, we help you
+            stay ahead of the curve. Whether you're a tech enthusiast, a
+            developer, or just someone who loves innovation, we provide
+            everything you need to navigate the digital world.
           </p>
           <ul>
             <li>
-              <strong>Tech News</strong> – Stay informed about the latest
-              breakthroughs from industry giants like Apple, Google, and
-              Microsoft.
+              <strong>✨ Breaking Tech News</strong> – Stay informed with
+              real-time updates on the latest industry trends.
             </li>
             <li>
-              <strong>Product Reviews</strong> – In-depth analysis of
-              smartphones, laptops, and hardware components to help you make the
-              best choices.
+              <strong>💻 Expert Reviews</strong> – Unbiased insights into the
+              newest gadgets, software, and hardware.
             </li>
             <li>
-              <strong>Guides & Tutorials</strong> – A hub for developers, tech
-              enthusiasts, and anyone looking to optimize their devices.
+              <strong>📚 Step-by-Step Tutorials</strong> – Learn coding,
+              optimize your workflow, and explore emerging technologies.
             </li>
             <li>
-              <strong>Creative Community</strong> – Share ideas, experiences,
-              and connect with fellow tech lovers worldwide.
+              <strong>🌍 Engage with the Community</strong> – Exchange ideas,
+              ask questions, and connect with fellow tech lovers.
             </li>
           </ul>
           <p>
-            Join us today and stay ahead in the ever-evolving world of
-            technology! 🚀
+            Join us on this journey into the world of technology – because the
+            future is now! 🚀
           </p>
         </div>
-        <div className="svg" style={{marginLeft: '30px'}}>
+
+        <div className="svg" style={{ marginLeft: "30px" }}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
             <defs>
               <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -155,45 +187,41 @@ function Intro() {
         </div>
       </div>
 
-      <div class="content-child" data-aos="fade-up">
+      <div className="content-child" data-aos="fade-up">
         <div className="content1">
           <p>
-            <span className="highlight">Welcome to [Your Website Name]</span> –
-            Explore the Future of Technology!
+            <span className="highlight">
+              Stay Ahead in the Digital Revolution with [Your Website Name]!
+            </span>
           </p>
           <p>
-            At <span className="highlight">[Your Website Name]</span>, we bring
-            you the latest news, reviews, and trends in the world of technology.
-            From artificial intelligence and blockchain to hardware,
-            programming, and cybersecurity, we keep you updated with the most
-            exciting innovations. 🚀
+            In a world driven by innovation, staying updated is more important
+            than ever. At <span className="highlight">[Your Website Name]</span>
+            , we bring you the latest insights, expert reviews, and practical
+            guides to help you navigate the fast-paced world of technology.
           </p>
           <ul>
             <li>
-              <strong>Tech News</strong> – Stay informed about the latest
-              breakthroughs from industry giants like Apple, Google, and
-              Microsoft.
+              🚀 <strong>Latest Innovations</strong> – Explore groundbreaking
+              advancements in AI, cybersecurity, blockchain, and more.
             </li>
             <li>
-              <strong>Product Reviews</strong> – In-depth analysis of
-              smartphones, laptops, and hardware components to help you make the
-              best choices.
+              🔍 <strong>Unbiased Tech Reviews</strong> – Get honest evaluations
+              of gadgets, software, and hardware before making a purchase.
             </li>
             <li>
-              <strong>Guides & Tutorials</strong> – A hub for developers, tech
-              enthusiasts, and anyone looking to optimize their devices.
+              💡 <strong>Hands-on Tutorials</strong> – Master new technologies
+              with easy-to-follow guides and step-by-step instructions.
             </li>
             <li>
-              <strong>Creative Community</strong> – Share ideas, experiences,
-              and connect with fellow tech lovers worldwide.
+              🤝 <strong>Join the Conversation</strong> – Connect with tech
+              enthusiasts, share knowledge, and be part of a thriving community.
             </li>
           </ul>
-          <p>
-            Join us today and stay ahead in the ever-evolving world of
-            technology! 🚀
-          </p>
+          <p>Don’t just keep up—lead the way in the future of technology! 🚀</p>
         </div>
-        <div className="svg" >
+
+        <div className="svg">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
             <defs>
               <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -214,15 +242,16 @@ function Intro() {
           </svg>
         </div>
       </div>
-      <div className="menu-choice">
+      <div className="menu-choice" data-aos="fade-up">
         <div className="menu-choice-head">
-          Custom Software 
-          Development Services
+          Custom Software Development Services
         </div>
         <div className="menu-choice-content">
           <div className="menu-choice-content-child">
             <div className="name-choice">Web Development</div>
-            <div className="demo-choice">Support and streamline your operations with software</div>
+            <div className="demo-choice">
+              Support and streamline your operations with software
+            </div>
             <div className="icon-choice">
               <div className="fluter"></div>
               <div className="nodejs"></div>
@@ -231,67 +260,163 @@ function Intro() {
           </div>
           <div className="menu-choice-content-child">
             <div className="name-choice">IT Consulting</div>
-            <div className="demo-choice">If you are looking for a trustworthy and reputable</div>
+            <div className="demo-choice">
+              If you are looking for a trustworthy and reputable
+            </div>
             <div className="icon-choice">
-              <div className="fluter"></div>
-              <div className="nodejs"></div>
-              <div className="reactjs"></div>
+              <div className="vscode"></div>
+              <div className="intellj"></div>
+              <div className="webstorm"></div>
             </div>
           </div>
           <div className="menu-choice-content-child">
             <div className="name-choice">UI/UX Design</div>
-            <div className="demo-choice">Support and streamline your operations with softwa</div>
+            <div className="demo-choice">
+              Support and streamline your operations with softwa
+            </div>
             <div className="icon-choice">
-              <div className="fluter"></div>
-              <div className="nodejs"></div>
-              <div className="reactjs"></div>
+              <div className="figma"></div>
+              <div className="adopexd"></div>
+              <div className="elixir"></div>
             </div>
           </div>
           <div className="menu-choice-content-child">
             <div className="name-choice">App Development</div>
-            <div className="demo-choice">Support and streamline your operations with software</div>
+            <div className="demo-choice">
+              Support and streamline your operations with software
+            </div>
             <div className="icon-choice">
               <div className="fluter"></div>
-              <div className="nodejs"></div>
-              <div className="reactjs"></div>
+              <div className="java"></div>
+              <div className="eclipse"></div>
             </div>
           </div>
           <div className="menu-choice-content-child">
             <div className="name-choice">Software Testing</div>
-            <div className="demo-choice">Support and streamline your operations with software</div>
+            <div className="demo-choice">
+              Support and streamline your operations with software
+            </div>
             <div className="icon-choice">
-              <div className="fluter"></div>
-              <div className="nodejs"></div>
-              <div className="reactjs"></div>
+              <div className="jest"></div>
+              <div className="pytest"></div>
+              <div className="selenium"></div>
             </div>
           </div>
           <div className="menu-choice-content-child">
             <div className="name-choice">Dedicated Team</div>
-            <div className="demo-choice">Support and streamline your operations with software</div>
+            <div className="demo-choice">
+              Support and streamline your operations with software
+            </div>
             <div className="icon-choice">
-              <div className="fluter"></div>
-              <div className="nodejs"></div>
-              <div className="reactjs"></div>
+              <div className="trello"></div>
+              <div className="slack"></div>
+              <div className="prometheus"></div>
             </div>
           </div>
           <div className="menu-choice-content-child">
             <div className="name-choice">DevOps & QA</div>
-            <div className="demo-choice">Support and streamline your operations with software</div>
+            <div className="demo-choice">
+              Support and streamline your operations with software
+            </div>
             <div className="icon-choice">
-              <div className="fluter"></div>
-              <div className="nodejs"></div>
-              <div className="reactjs"></div>
+              <div className="github"></div>
+              <div className="docker"></div>
+              <div className="Ansible"></div>
             </div>
           </div>
           <div className="menu-choice-content-child">
             <div className="name-choice">Data Security</div>
-            <div className="demo-choice">Support and streamline your operations with software</div>
+            <div className="demo-choice">
+              Support and streamline your operations with software
+            </div>
             <div className="icon-choice">
-              <div className="fluter"></div>
-              <div className="nodejs"></div>
-              <div className="reactjs"></div>
+              <div className="mysql"></div>
+              <div className="mongodb"></div>
+              <div className="database"></div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="footer-intro">
+        <div className="infor">
+          <strong>Information</strong>
+          <ul>
+            <li>Formats</li>
+            <li>Compression</li>
+            <li>Pricing</li>
+            <li>FAQ</li>
+            <li>About</li>
+            <li>Status</li>
+            <li>Policy</li>
+          </ul>
+        </div>
+        <div className="get-started">
+          <strong>Get Started</strong>
+          <ul>
+            <li>Introducing</li>
+            <li>Themes</li>
+            <li>Templates</li>
+            <li>Documentation</li>
+            <li>Support</li>
+            <li>Usages</li>
+            <li>Elements</li>
+            <li>Global</li>
+          </ul>
+        </div>
+        <div className="resource">
+          <strong>Resources</strong>
+          <ul>
+            <li>API</li>
+            <li>Form Validation</li>
+            <li>Form Validation</li>
+            <li>Accessibility</li>
+            <li>Marketplace</li>
+            <li>Visibility</li>
+            <li>Commuity</li>
+          </ul>
+        </div>
+        <div className="newsletter">
+          <strong>Newsletter</strong>
+          <p>Subscribe to our newsletter for a weekly </p>
+          <p>dose of news, updates,helpful tips, and</p>
+          <p>exclusive offers.</p>
+          <form action="#">
+            <input type="text" placeholder="Your email" required />
+            <button type="submit">SUBSCRIBE</button>
+          </form>
+
+
+          <div className="wrapperq">
+            <ul>
+              <li className="facebook">
+                <a href="#">
+                  <i className="fa fa-facebook fa-2x" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li className="twitter">
+                <a href="#">
+                  <i className="fa fa-twitter fa-2x" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li className="instagram">
+                <a href="#">
+                  <i className="fa fa-instagram fa-2x" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li className="google">
+                <a href="#">
+                  <i className="fa fa-google fa-2x" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li className="whatsapp">
+                <a href="#">
+                  <i className="fa fa-whatsapp fa-2x" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </Fragment>
